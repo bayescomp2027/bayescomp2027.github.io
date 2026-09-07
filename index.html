@@ -115,11 +115,19 @@
     .airport-card a { display: inline-block; margin-top: 18px; border-bottom: 1px solid rgba(233,181,142,.55); color: #f4d1b5; font-size: 12px; font-weight: 750; }
     .airport-note { margin: 15px 0 0; color: rgba(255,255,255,.5); font-size: 11px; }
     .organization { background: var(--paper); }
-    .org-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 55px; border: 1px solid var(--line); background: var(--line); }
+    .org-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 55px; border: 1px solid var(--line); background: var(--line); }
     .org-grid article { min-height: 220px; padding: 30px; background: var(--paper); }
     .org-grid article:last-child { background: var(--paper-deep); }
     .org-grid h3 { margin: 45px 0 3px; font: 400 25px/1.15 Georgia, serif; }
     .org-grid p { margin: 0; color: #69676c; }
+    .org-grid .committee-card { grid-column: 1 / -1; min-height: 0; padding: 34px 30px 38px; }
+    .committee-card h3 { margin: 12px 0 22px; }
+    .committee-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+    .committee-list li { min-width: 0; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.4; }
+    .committee-list .lead { font-weight: 750; }
+    .committee-role { display: block; margin-top: 2px; color: var(--maroon-bright); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .committee-card .coordinators { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; }
+    .coordinators strong { color: var(--ink); }
     footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; min-height: 175px; padding: 45px 5vw; background: var(--ink); color: white; }
     footer .middle { text-align: center; font-size: 12px; }
     footer .middle p { margin: 0; color: rgba(255,255,255,.68); }
@@ -145,6 +153,7 @@
       .hero-copy { margin-top: 42px; font-size: 20px; }
       .section { padding-top: 70px; padding-bottom: 70px; }
       .columns, .heading-row, .speakers, .days, .callout, .travel, .airport-grid, .org-grid { grid-template-columns: 1fr; }
+      .committee-list { grid-template-columns: 1fr; }
       .airport-card.wide { grid-column: auto; }
       .columns { margin-top: 35px; }
       .speaker .portrait { aspect-ratio: 1/1; }
@@ -201,7 +210,7 @@
 
     <section class="visit" id="visit"><div class="map" aria-hidden="true"><div class="tx">TX</div><span class="place">College Station</span></div><div class="visit-copy"><div class="label"><i>05</i><span>Venue &amp; travel</span></div><h2>Welcome to Aggieland.</h2><p>BayesComp 2027 will meet on the Texas A&amp;M University campus in College Station. Detailed venue, hotel, accessibility, and local transportation information will be announced as arrangements are finalized.</p><div class="travel"><div><span>Venue</span><b>Texas A&amp;M University</b><small>Specific building to be announced</small></div><div><span>Lodging</span><b>Conference rates forthcoming</b><small>Official booking links will appear here</small></div></div><div class="airport-block"><p class="eyebrow">Getting here</p><div class="airport-grid"><article class="airport-card"><span>CLL</span><h3>Easterwood Airport</h3><p>The closest airport to campus, with daily American Airlines service to and from Dallas/Fort Worth (DFW). Rideshare and taxi service are available for the short trip into town.</p><a href="https://visit.cstx.gov/plan-your-trip/easterwood-airport/">Airport details ↗</a></article><article class="airport-card"><span>IAH</span><h3>Houston Intercontinental</h3><p>Ground Shuttle operates scheduled shared rides between IAH and College Station. Advance reservations are recommended; hotel drop-off may be available for an additional fee.</p><a href="https://www.groundshuttle.com/">Ground Shuttle ↗</a></article><article class="airport-card wide"><span>DFW &amp; AUS</span><h3>Regional airport options</h3><p>Dallas/Fort Worth and Austin are practical rental-car options. DFW also provides the connecting flights to CLL. No conference shuttle from these airports has been announced.</p></article></div><p class="airport-note">Conference-specific transportation and campus bus guidance will be added after the venue and hotel blocks are finalized.</p></div></div></section>
 
-    <section class="section organization"><div class="label"><i>06</i><span>Organization</span></div><div><h2>A BayesComp–ISBA meeting at Texas A&amp;M.</h2><div class="org-grid"><article><span>Hosted by</span><h3>Texas A&amp;M University</h3><p>Department of Statistics</p></article><article><span>Scientific home</span><h3>BayesComp–ISBA</h3><p>Bayesian Computation Section of ISBA</p></article><article><span>Conference team</span><h3>Organizing committees</h3><p>Committee membership and contact information will be announced.</p></article></div></div></section>
+    <section class="section organization" id="organization"><div class="label"><i>06</i><span>Organization</span></div><div><h2>A BayesComp–ISBA meeting at Texas A&amp;M.</h2><div class="org-grid"><article><span>Hosted by</span><h3>Texas A&amp;M University</h3><p>Department of Statistics</p></article><article><span>Scientific home</span><h3>BayesComp–ISBA</h3><p>Bayesian Computation Section of ISBA</p></article><article class="committee-card"><span>Scientific leadership</span><h3>Scientific Committee</h3><ul class="committee-list"><li class="lead">David Rossell<span class="committee-role">Chair</span></li><li class="lead">Quan Zhou<span class="committee-role">Co-Chair</span></li><li>Antonietta Mira</li><li>David Nott</li><li>Dootika Vats</li><li>Giacomo Zanella</li><li>Haavard Rue</li><li>Leah South</li><li>Lu Zhang</li><li>Mario Peruggia</li><li>Michele Guindani</li><li>Ramses Mena</li><li>Sara Wade</li><li>Sonia Petrone</li><li>Sudipto Banerjee</li></ul></article><article class="committee-card"><span>Conference team</span><h3>Local Organizing Committee</h3><ul class="committee-list"><li>Anirban Bhattacharya</li><li>Debdeep Pati</li><li>Scott Bruce</li><li>Raymond Carroll</li><li>Valen Johnson</li><li>Bani Mallick</li><li>Huiyan Sang</li></ul><p class="coordinators"><strong>Administrative coordinators:</strong> Judith Moreno and Ana Ferreira</p></article></div></div></section>
   </main>
 
   <footer><a class="brand" href="#top"><span>BAYES</span><span>COMP</span><em>27</em></a><div class="middle"><p>May 18–20, 2027 · College Station, Texas</p><p>Official conference website · Last updated September 2026</p></div><a class="official" href="https://calendar.tamu.edu/event/370749-bayes-comp-2027">Official event listing ↗</a></footer>
