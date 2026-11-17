@@ -51,6 +51,18 @@
     .label.light { color: rgba(255,255,255,.65); }
     .label.light i { color: var(--peach); }
     h2 { margin: 0; font: 400 clamp(36px, 4.5vw, 66px)/.98 Georgia, serif; letter-spacing: -.05em; }
+    .updates { display: grid; grid-template-columns: minmax(145px, .32fr) 1.68fr; gap: clamp(24px, 6vw, 100px); padding: 30px 5vw 34px; border-bottom: 1px solid var(--line); background: var(--paper-deep); scroll-margin-top: 20px; }
+    .updates-heading h2 { margin: 5px 0 0; color: var(--maroon); font: 400 clamp(25px, 2.5vw, 32px)/1.15 Georgia, serif; letter-spacing: -.03em; }
+    .update-item { min-width: 0; padding-left: 24px; border-left: 3px solid var(--maroon-bright); }
+    .update-item time { color: #625a5b; font-size: 11px; font-weight: 750; letter-spacing: .06em; }
+    .update-item h3 { margin: 6px 0 10px; font: 400 clamp(21px, 2vw, 26px)/1.2 Georgia, serif; }
+    .update-item p { max-width: 960px; margin: 0 0 12px; color: #4e4d52; font-size: 14px; line-height: 1.7; }
+    .update-item .text-link { font-size: 12px; }
+    .updates a:focus-visible { outline: 2px solid var(--maroon-bright); outline-offset: 4px; }
+    @media (max-width: 720px) {
+      .updates { grid-template-columns: 1fr; gap: 18px; padding-top: 24px; padding-bottom: 28px; }
+      .update-item { padding-left: 18px; }
+    }
     .about { background: linear-gradient(rgba(80,0,0,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(80,0,0,.045) 1px, transparent 1px), var(--paper); background-size: 46px 46px; }
     .columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(35px, 5vw, 90px); max-width: 1020px; margin: 58px 0 28px; color: #4e4d52; font-size: 17px; line-height: 1.8; }
     .text-link { display: inline-block; border-bottom: 1px solid currentColor; color: var(--maroon-bright); font-weight: 750; }
@@ -207,11 +219,21 @@
 <body>
   <header>
     <a class="brand" href="#top"><span>BAYES</span><span>COMP</span><em>27</em></a>
-    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#keynotes">Keynotes</a><a href="#dates">Dates</a><a href="#program">Program</a><a href="#visit">Visit</a></nav>
+    <nav aria-label="Main navigation"><a href="#updates">Updates</a><a href="#about">About</a><a href="#keynotes">Keynotes</a><a href="#dates">Dates</a><a href="#program">Program</a><a href="#visit">Visit</a></nav>
     <a class="official" href="https://calendar.tamu.edu/statistics/event/370749-bayes-comp-2027">Official listing ↗</a>
   </header>
 
   <main>
+    <section class="updates" id="updates" aria-labelledby="updates-heading">
+      <div class="updates-heading"><h2 id="updates-heading">Latest updates</h2></div>
+      <article class="update-item" aria-labelledby="room-block-update">
+        <time datetime="2026-11-17">November 17, 2026</time>
+        <h3 id="room-block-update">Discounted room block secured at The George</h3>
+        <p>We have secured a discounted room block at The George for BayesComp 2027 attendees. Rooms are limited and available on a first-come, first-served basis. Booking details will be shared through the ISBA mailing list, along with conference registration information.</p>
+        <a class="text-link" href="#accommodations">Explore The George &amp; Century Square &rarr;</a>
+      </article>
+    </section>
+
     <section class="hero" id="top">
       <div class="hero-photo" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-main">
